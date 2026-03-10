@@ -29,12 +29,6 @@ function Navbar() {
               Home
             </Link>
             <Link 
-              to="/categories" 
-              className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-            >
-              Categories
-            </Link>
-            <Link 
               to="/about" 
               className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
@@ -45,6 +39,12 @@ function Navbar() {
               className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Contact
+            </Link>
+                 <Link 
+              to="/createBlog" 
+              className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+            Create Blog
             </Link>
           </div>
 
