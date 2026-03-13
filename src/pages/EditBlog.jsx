@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 function EditBlog() {
   const {id} = useParams()
   const navigate = useNavigate()
-  const [data,setData] = useState({
+  const [blog,setBlog] = useState({
     title:'',
     subtitle:'',
     description:'',
@@ -14,15 +14,15 @@ function EditBlog() {
   })
  const handleChange = (e) => {
   const {name,value} = e.target
-  setData({
-    ...data,
+  setBlog({
+    ...blog,
     [name]: name === "image" ? e.target.files[0] : value
   })
  }
 
  const editBlog = async(e) => {
    e.preventDefault()
-   const response = await axios.patch(`http://localhost:3000/blog/${id}`, data,{
+   const response = await axios.patch(`http://localhost:3000/blog/${id}`, blog,{
     headers: {
       "Content-Type": "multipart/form-data"
     }
@@ -40,6 +40,27 @@ function EditBlog() {
        }
    
  }
+
+const fetchBlog = async () => {
+  try {
+    const response = await axios.get(`http://localhost:3000/blog/${id}`)
+    
+    console.log(response.data)   
+    
+    setBlog({
+      title: response.data.data.title || "",
+      subtitle: response.data.data.subtitle || "",
+      description: response.data.data.description || "",
+      image: response.data.data.image || ""
+    })
+    
+  } catch (error) {
+    console.log(error)
+  }
+}
+ useEffect(() => {
+  fetchBlog()
+ },[id])
   return (
     <>
       <Navbar />
@@ -58,6 +79,7 @@ function EditBlog() {
                 placeholder="Enter blog title"
                 name="title"
                 onChange={handleChange}
+                  value={blog.title}
                 className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -71,6 +93,7 @@ function EditBlog() {
                 type="text"
                 placeholder="Enter subtitle"
                 name="subtitle"
+                value={blog.subtitle}
                   onChange={handleChange}
                 className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -85,6 +108,7 @@ function EditBlog() {
                 placeholder="Write your blog content..."
                 name="description"
                   onChange={handleChange}
+                 value={blog.description}
                 className="w-full border border-gray-300 rounded-md p-3 h-40 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
             </div>
