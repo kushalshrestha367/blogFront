@@ -1,6 +1,6 @@
 import React, {  use, useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 function SingleBlog() {
@@ -40,7 +40,7 @@ function SingleBlog() {
       <div className="max-w-3xl mx-auto">
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <img
-            src={`http://localhost:3000/${singleBlog.image}`}
+            src={singleBlog.image}
             alt="blog cover"
             className="w-full h-100 object-contain"
           />
@@ -59,9 +59,12 @@ function SingleBlog() {
             </p>
             
             <div className="flex gap-3">
+            <Link to={`/edit/${singleBlog._id}`}>
               <button onClick={() => {}} className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition font-medium">
                 Edit Blog
               </button>
+            </Link>
+           
               <button onClick={deleteBlog} className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition font-medium">
                 Delete Blog
               </button>

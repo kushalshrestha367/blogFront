@@ -27,7 +27,7 @@ function Home() {
             {
                 blogs.map((blog) => (
                     // <Card key={blog._id} title={blog.title} subtitle={blog.subtitle} description={blog.description} image={blog.image} />
-                    <Card blog={blog}/>
+                    <Card blog={blog }/>
                 ))
             }
         
