@@ -9,7 +9,7 @@ function SingleBlog() {
     const navigate = useNavigate()
     const fetchSingleBlog = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/blog/${id}`)
+            const response = await axios.get(`https://blog-api-i6kb.onrender.com/blog/${id}`)
             const data = response.data.data
             setSingleBlog(data)
         }
@@ -21,7 +21,7 @@ function SingleBlog() {
 
         try {
           
-            await axios.delete(`http://localhost:3000/blog/${id}`)
+            await axios.delete(`https://blog-api-i6kb.onrender.com/blog/${id}`)
                 alert('Blog deleted successfully')
             navigate('/')
         }
