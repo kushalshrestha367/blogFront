@@ -96,13 +96,13 @@ function Navbar() {
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-4 pt-2 pb-3 space-y-2">
             {/* Mobile Search */}
-            <div className="relative mb-3">
+            {/* <div className="relative mb-3">
               <input
                 type="text"
                 placeholder="Search articles..."
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
               />
-            </div>
+            </div> */}
 
             {/* Mobile Navigation Links */}
             <Link 
