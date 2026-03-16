@@ -22,7 +22,7 @@ function Navbar() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link 
+            {/* <Link 
               to="/" 
               className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
@@ -39,7 +39,7 @@ function Navbar() {
               className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Contact
-            </Link>
+            </Link> */}
                  <Link 
               to="/createBlog" 
               className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
@@ -65,12 +65,12 @@ function Navbar() {
             </div>
 
             {/* Auth Buttons */}
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
+            {/* <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
               Sign In
             </button>
             <button className="border border-blue-600 text-blue-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors">
               Sign Up
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile menu button */}
@@ -106,13 +106,13 @@ function Navbar() {
 
             {/* Mobile Navigation Links */}
             <Link 
-              to="/" 
+               to="/createBlog" 
               className="block text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              Create Blog
             </Link>
-            <Link 
+            {/* <Link 
               to="/categories" 
               className="block text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 transition-colors"
               onClick={() => setIsMenuOpen(false)}
@@ -132,16 +132,16 @@ function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
-            </Link>
+            </Link> */}
 
             {/* Mobile Auth Buttons */}
             <div className="flex flex-col space-y-2 pt-2 border-t border-gray-200">
-              <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
+              {/* <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
                 Sign In
               </button>
               <button className="w-full border border-blue-600 text-blue-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors">
                 Sign Up
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
