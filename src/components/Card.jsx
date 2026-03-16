@@ -1,28 +1,36 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Card({ blog }) {
   return (
-<Link to={`/blog/${blog._id}`}>
-   <div className="flex px-3 py-3">
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src={blog.image} alt="Sunset in the mountains"/>
-        <div className="px-6 py-4">
+    <Link to={`/blog/${blog._id}`}>
+      <div className="flex px-3 py-3">
+        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+          <img
+            className="w-full"
+            src={blog.image}
+            alt="Sunset in the mountains"
+          />
+          <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">{blog.title}</div>
-            <div className='font-semibold text-xl mb-1'>{blog.subtitle}</div>
-            <p className="text-gray-700 text-base">
-                {blog.description}
-            </p>
+            <div className="font-semibold text-xl mb-1">{blog.subtitle}</div>
+            <p className="text-gray-700 text-base">{blog.description}</p>
+          </div>
+          <div className="px-6 py-4">
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+              #WWE
+            </span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+              #Wrestling
+            </span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+              #Superstar
+            </span>
+          </div>
         </div>
-        <div className="px-6 py-4">
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#photography</span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#travel</span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#winter</span>
-        </div>
-    </div>
-</div>
-</Link>
-  )
+      </div>
+    </Link>
+  );
 }
 
-export default Card
+export default Card;

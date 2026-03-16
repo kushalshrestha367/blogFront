@@ -51,7 +51,7 @@ function Navbar() {
           {/* Desktop Right Side - Search and Auth */}
           <div className="hidden md:flex items-center space-x-4">
             {/* Search Bar */}
-            <div className="relative">
+            {/* <div className="relative">
               <input
                 type="text"
                 placeholder="Search articles..."
@@ -62,7 +62,7 @@ function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </button>
-            </div>
+            </div> */}
 
             {/* Auth Buttons */}
             {/* <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
